@@ -123,7 +123,7 @@ func (zllm *ZepOpenAILLM) configureClient(cfg *config.Config) ([]openai.Option, 
 		log.Fatal("only one of AzureOpenAIEndpoint or OpenAIEndpoint can be set")
 	}
 	if cfg.LLM.AzureOpenAIModel.EmbeddingDeployment != "" && cfg.LLM.OpenAIEmbedding != "" {
-		log.Fatal("only one of AzureOpenAIModel。EmbeddingDeployment or OpenAIEmbedding can be set")
+		log.Fatal("only one of AzureOpenAIModel.EmbeddingDeployment or OpenAIEmbedding can be set")
 	}
 
 	// Set up the HTTP client and config OpenTelemetry wrapper
