@@ -144,3 +144,5 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	mellium.im/sasl v0.3.1 // indirect
 )
+
+replace github.com/tmc/langchaingo => github.com/ArnoChenFX/langchaingo v0.0.1
