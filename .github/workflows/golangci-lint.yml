@@ -1,11 +1,10 @@
 name: golangci-lint
 on:
-  push:
-    tags:
-      - v*
   pull_request:
     branches:
       - zep-vector-memory
+  push:
+     branches: [ "zep-vector-memory" ]
 permissions:
   contents: read
   # Optional: allow read access to pull request. Use with `only-new-issues` option.
