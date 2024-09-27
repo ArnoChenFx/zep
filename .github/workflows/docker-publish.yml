@@ -67,12 +67,9 @@ jobs:
             type=match,pattern=v(.*-beta),group=1
             type=match,pattern=v.*-(beta),group=1
 
-      - name: Set up Depot CLI
-        uses: depot/setup-action@v1
       - name: Depot build and push image
-        uses: depot/build-push-action@v1
+        uses: docker/build-push-action@v6
         with:
-          project: v9jv1mlpwc
           context: .
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
