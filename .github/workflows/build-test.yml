@@ -3,9 +3,9 @@ name: build-test
 on:
   pull_request:
     branches:
-      - main
+      - zep-vector-memory
   push:
-     branches: [ "main" ]
+     branches: [ "zep-vector-memory" ]
 jobs:
   build:
     runs-on: ubuntu-4c-16GB-150GB
