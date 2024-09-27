@@ -4,7 +4,6 @@ package config
 // Use cmd.NewConfig to create a new instance
 type Config struct {
 	LLM           LLM                 `mapstructure:"llm"`
-	NLP           NLP                 `mapstructure:"nlp"`
 	Memory        MemoryConfig        `mapstructure:"memory"`
 	Extractors    ExtractorsConfig    `mapstructure:"extractors"`
 	Store         StoreConfig         `mapstructure:"store"`
@@ -37,10 +36,6 @@ type LLM struct {
 type AzureOpenAIConfig struct {
 	LLMDeployment       string `mapstructure:"llm_deployment"`
 	EmbeddingDeployment string `mapstructure:"embedding_deployment"`
-}
-
-type NLP struct {
-	ServerURL string `mapstructure:"server_url"`
 }
 
 type MemoryConfig struct {

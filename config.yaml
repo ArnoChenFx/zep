@@ -22,8 +22,6 @@ llm:
   openai_org_id:
   # text-embedding-3-small, text-embedding-3-large, text-embedding-ada-002 (default)
   openai_embedding:
-nlp:
-  server_url: "http://localhost:5557"
 memory:
   message_window: 12
 extractors:
@@ -31,10 +29,8 @@ extractors:
     embeddings:
       enabled: true
       chunk_size: 1000
-      dimensions: 384
-      service: "local"
-#      dimensions: 1536
-#      service: "openai"
+      dimensions: 1536
+      service: "openai"
   messages:
     summarizer:
       enabled: true
@@ -43,17 +39,15 @@ extractors:
       embeddings:
         enabled: true
         dimensions: 384
-        service: "local"
+        service: "openai"
     entities:
       enabled: true
     intent:
       enabled: true
     embeddings:
       enabled: true
-      dimensions: 384
-      service: "local"
-#      dimensions: 1536
-#      service: "openai"
+      dimensions: 1536
+      service: "openai"
 store:
   type: "postgres"
   postgres:

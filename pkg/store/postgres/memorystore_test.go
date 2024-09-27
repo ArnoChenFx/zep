@@ -1,11 +1,12 @@
 package postgres
 
 import (
-	"github.com/getzep/zep/pkg/llms"
-	"github.com/getzep/zep/pkg/tasks"
 	"os"
 	"reflect"
 	"testing"
+
+	"github.com/getzep/zep/pkg/llms"
+	"github.com/getzep/zep/pkg/tasks"
 
 	"github.com/getzep/zep/internal"
 	"github.com/sirupsen/logrus"
@@ -76,8 +77,8 @@ func setup() {
 	tasks.RunTaskRouter(testCtx, appState, db)
 
 	embeddingModel = &models.EmbeddingModel{
-		Service:    "local",
-		Dimensions: 384,
+		Service:    "openai",
+		Dimensions: 1536,
 	}
 }
 

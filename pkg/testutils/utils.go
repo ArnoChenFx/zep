@@ -26,9 +26,6 @@ func testConfigDefaults() (*config.Config, error) {
 			Service: "openai",
 			Model:   "gpt-4o-mini",
 		},
-		NLP: config.NLP{
-			ServerURL: "http://localhost:5557",
-		},
 		Memory: config.MemoryConfig{
 			MessageWindow: 12,
 		},
@@ -109,12 +106,6 @@ func testConfigDefaults() (*config.Config, error) {
 	p := os.Getenv("ZEP_STORE_POSTGRES_DSN")
 	if p != "" {
 		testConfig.Store.Postgres.DSN = p
-	}
-
-	// load nlp server config from env
-	n := os.Getenv("ZEP_NLP_SERVER_URL")
-	if n != "" {
-		testConfig.NLP.ServerURL = n
 	}
 
 	return testConfig, nil
