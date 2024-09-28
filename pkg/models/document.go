@@ -37,7 +37,7 @@ type DocumentCollectionCounts struct {
 }
 
 type CreateDocumentCollectionRequest struct {
-	Name                string                 `json:"name"                 validate:"required,alphanum,min=3,max=40"`
+	Name                string                 `json:"name"                 validate:"required,min=3,max=40"`
 	Description         string                 `json:"description"          validate:"omitempty,max=1000"`
 	Metadata            map[string]interface{} `json:"metadata,omitempty"`
 	EmbeddingDimensions int                    `json:"embedding_dimensions" validate:"required,numeric,min=8,max=2000"`
@@ -107,7 +107,7 @@ type UpdateDocumentListRequest struct {
 
 type GetDocumentRequest struct {
 	UUID       uuid.UUID `json:"uuid"        validate:"required_without=DocumentID,uuid,omitempty"`
-	DocumentID string    `json:"document_id" validate:"required_without=UUID,alphanum,max=40,omitempty"`
+	DocumentID string    `json:"document_id" validate:"required_without=UUID,max=40,omitempty"`
 }
 
 type GetDocumentListRequest struct {
