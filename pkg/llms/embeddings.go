@@ -27,7 +27,7 @@ func EmbedTexts(
 	if model.Service == "local" {
 		return nil, errors.New("local embedding not supported")
 	}
-	return appState.LLMClient.EmbedTexts(ctx, text)
+	return appState.LLMClient.EmbedTexts(ctx, text, model.Dimensions)
 }
 
 func GetEmbeddingModel(

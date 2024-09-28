@@ -157,7 +157,7 @@ func TestZepOpenAILLM_EmbedTexts(t *testing.T) {
 	assert.NoError(t, err, "Expected no error from NewOpenAILLM")
 
 	texts := []string{"Hello, world!", "Another text"}
-	embeddings, err := zllm.EmbedTexts(context.Background(), texts)
+	embeddings, err := zllm.EmbedTexts(context.Background(), texts, 1024)
 	assert.NoError(t, err, "Expected no error from EmbedTexts")
 	assert.Equal(t, len(texts), len(embeddings), "Expected embeddings to have same length as texts")
 	assert.NotZero(t, embeddings[0], "Expected embeddings to be non-zero")

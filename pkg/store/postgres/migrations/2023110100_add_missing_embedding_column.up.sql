@@ -7,7 +7,7 @@ BEGIN
         WHERE
             tablename = 'message_embedding') THEN
     ALTER TABLE message_embedding
-        ADD COLUMN IF NOT EXISTS embedding vector(1536);
+        ADD COLUMN IF NOT EXISTS embedding vector(1024);
 END IF;
 END
 $$;
@@ -22,7 +22,7 @@ BEGIN
         WHERE
             tablename = 'summary_embedding') THEN
     ALTER TABLE summary_embedding
-        ADD COLUMN IF NOT EXISTS embedding vector(1536);
+        ADD COLUMN IF NOT EXISTS embedding vector(1024);
 END IF;
 END
 $$;

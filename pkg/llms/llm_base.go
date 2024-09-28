@@ -113,11 +113,11 @@ func (zllm *ZepLLM) Call(ctx context.Context,
 	return result, err
 }
 
-func (zllm *ZepLLM) EmbedTexts(ctx context.Context, texts []string) ([][]float32, error) {
+func (zllm *ZepLLM) EmbedTexts(ctx context.Context, texts []string, dimensions int) ([][]float32, error) {
 	ctx, span := zllm.tracer.Start(ctx, "llm.EmbedTexts")
 	defer span.End()
 
-	result, err := zllm.llm.EmbedTexts(ctx, texts)
+	result, err := zllm.llm.EmbedTexts(ctx, texts, dimensions)
 	if err != nil {
 		span.RecordError(err)
 		return nil, err

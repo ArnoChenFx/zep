@@ -145,4 +145,4 @@ require (
 	mellium.im/sasl v0.3.1 // indirect
 )
 
-replace github.com/tmc/langchaingo => github.com/ArnoChenFx/langchaingo v0.0.2
+replace github.com/tmc/langchaingo => github.com/ArnoChenFx/langchaingo v0.0.3

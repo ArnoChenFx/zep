@@ -18,7 +18,7 @@ type ZepLLM interface {
 		options ...llms.CallOption,
 	) (string, error)
 	// EmbedTexts embeds the given texts
-	EmbedTexts(ctx context.Context, texts []string) ([][]float32, error)
+	EmbedTexts(ctx context.Context, texts []string, dimensions int) ([][]float32, error)
 	// GetTokenCount returns the number of tokens in the given text
 	GetTokenCount(text string) (int, error)
 	// Init initializes the LLM

@@ -90,7 +90,7 @@ func (zllm *ZepOpenAILLM) Call(ctx context.Context,
 	return completion.GetContent(), nil
 }
 
-func (zllm *ZepOpenAILLM) EmbedTexts(ctx context.Context, texts []string) ([][]float32, error) {
+func (zllm *ZepOpenAILLM) EmbedTexts(ctx context.Context, texts []string, dimensions int) ([][]float32, error) {
 	// If the LLM is not initialized, return an error
 	if zllm.client == nil {
 		return nil, NewLLMError(InvalidLLMModelError, nil)
@@ -99,7 +99,7 @@ func (zllm *ZepOpenAILLM) EmbedTexts(ctx context.Context, texts []string) ([][]f
 	ctx, cancel := context.WithTimeout(ctx, OpenAICallTimeout)
 	defer cancel()
 
-	embeddings, err := zllm.client.CreateEmbedding(ctx, texts)
+	embeddings, err := zllm.client.CreateEmbedding(ctx, texts, dimensions)
 	if err != nil {
 		return nil, NewLLMError("error while creating embedding", err)
 	}

@@ -38,8 +38,8 @@ cloud.google.com/go/storage v1.14.0/go.mod h1:GrKmX003DSIwi9o29oFT7YDnHYwZoctc3f
 dario.cat/mergo v1.0.0 h1:AGCNq9Evsj31mOgNPcLyXc+4PNABt905YmuqPYYpBWk=
 dario.cat/mergo v1.0.0/go.mod h1:uNxQE+84aUszobStD9th8a29P2fMDhsBdgRYvZOxGmk=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
-github.com/ArnoChenFx/langchaingo v0.0.2 h1:KsYt4ZHBgCDE17+IzZD8FgLX8jdRXHXW24safJdioCo=
-github.com/ArnoChenFx/langchaingo v0.0.2/go.mod h1:R+a8fqt6nmKyYj7KSpr/m9oxqE6OJLbLyO9pxeHpjLU=
+github.com/ArnoChenFx/langchaingo v0.0.3 h1:fgPfkXBGcWE6oWWrZFnx4ShWNy1KTgbWm1Cmcn7MNtQ=
+github.com/ArnoChenFx/langchaingo v0.0.3/go.mod h1:R+a8fqt6nmKyYj7KSpr/m9oxqE6OJLbLyO9pxeHpjLU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/KyleBanks/depth v1.2.1 h1:5h8fQADFrWtarTdtDudMmGsC7GPbOAu6RVB3ffsVFHc=

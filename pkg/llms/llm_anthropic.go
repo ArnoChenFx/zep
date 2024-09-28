@@ -78,7 +78,7 @@ func (zllm *ZepAnthropicLLM) Call(ctx context.Context,
 	return completion, nil
 }
 
-func (zllm *ZepAnthropicLLM) EmbedTexts(_ context.Context, _ []string) ([][]float32, error) {
+func (zllm *ZepAnthropicLLM) EmbedTexts(_ context.Context, _ []string, _ int) ([][]float32, error) {
 	return nil, errors.New("not implemented. use a local embedding model")
 }
 
