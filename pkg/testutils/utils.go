@@ -33,7 +33,7 @@ func testConfigDefaults() (*config.Config, error) {
 			Documents: config.DocumentExtractorsConfig{
 				Embeddings: config.EmbeddingsConfig{
 					Enabled:    true,
-					Dimensions: 1536,
+					Dimensions: 1024,
 					Service:    "openai",
 				},
 			},
@@ -42,13 +42,13 @@ func testConfigDefaults() (*config.Config, error) {
 					Enabled: true,
 					Embeddings: config.EmbeddingsConfig{
 						Enabled:    true,
-						Dimensions: 1536,
+						Dimensions: 1024,
 						Service:    "openai",
 					},
 				},
 				Embeddings: config.EmbeddingsConfig{
 					Enabled:    true,
-					Dimensions: 1536,
+					Dimensions: 1024,
 					Service:    "openai",
 				},
 			},

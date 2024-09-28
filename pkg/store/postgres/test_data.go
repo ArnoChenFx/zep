@@ -97,7 +97,7 @@ func GenerateFixtureData(fixtureCount int, outputDir string) {
 	// Override fixtureCount to 10 for DocumentCollectionSchema
 	fixtureCountCollections := 10
 	collections := make([]DocumentCollectionSchema, fixtureCountCollections)
-	embeddingDimensions := []int{384, 768, 1536}
+	embeddingDimensions := []int{384, 768, 1024, 1536}
 
 	for i := 0; i < fixtureCountCollections; i++ {
 		gofakeit.ShuffleInts(embeddingDimensions)

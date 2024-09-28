@@ -27,7 +27,7 @@ import (
 	"github.com/uptrace/bun"
 )
 
-const defaultEmbeddingDims = 1536
+const defaultEmbeddingDims = 1024
 
 var maxOpenConns = 4 * runtime.GOMAXPROCS(0)
 
@@ -91,7 +91,7 @@ type MessageVectorStoreSchema struct {
 	DeletedAt   time.Time           `bun:"type:timestamptz,soft_delete,nullzero"`
 	SessionID   string              `bun:",notnull"`
 	MessageUUID uuid.UUID           `bun:"type:uuid,notnull,unique"`
-	Embedding   pgvector.Vector     `bun:"type:vector(1536)"`
+	Embedding   pgvector.Vector     `bun:"type:vector"`
 	IsEmbedded  bool                `bun:"type:bool,notnull,default:false"`
 	Session     *SessionSchema      `bun:"rel:belongs-to,join:session_id=session_id,on_delete:cascade"`
 	Message     *MessageStoreSchema `bun:"rel:belongs-to,join:message_uuid=uuid,on_delete:cascade"`
@@ -140,7 +140,7 @@ type SummaryVectorStoreSchema struct {
 	DeletedAt   time.Time           `bun:"type:timestamptz,soft_delete,nullzero"`
 	SessionID   string              `bun:",notnull"`
 	SummaryUUID uuid.UUID           `bun:"type:uuid,notnull,unique"`
-	Embedding   pgvector.Vector     `bun:"type:vector(1536)"`
+	Embedding   pgvector.Vector     `bun:"type:vector"`
 	IsEmbedded  bool                `bun:"type:bool,notnull,default:false"`
 	Summary     *SummaryStoreSchema `bun:"rel:belongs-to,join:summary_uuid=uuid,on_delete:cascade"`
 	Session     *SessionSchema      `bun:"rel:belongs-to,join:session_id=session_id,on_delete:cascade"`

@@ -47,7 +47,7 @@ func TestEmbeddingExtractor_Extract_OpenAI(t *testing.T) {
 
 	model := &models.EmbeddingModel{
 		Service:    "openai",
-		Dimensions: 1536,
+		Dimensions: 1024,
 	}
 	embeddings, err := llms.EmbedTexts(testCtx, appState, model, documentType, texts)
 	assert.NoError(t, err)

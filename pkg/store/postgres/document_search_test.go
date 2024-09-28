@@ -20,7 +20,7 @@ func TestDocumentSearchWithIndexEndToEnd(t *testing.T) {
 	ctx, done := context.WithCancel(testCtx)
 
 	appState.Config.Extractors.Documents.Embeddings.Service = "openai"
-	appState.Config.Extractors.Documents.Embeddings.Dimensions = 1536
+	appState.Config.Extractors.Documents.Embeddings.Dimensions = 1024
 
 	collectionName := testutils.GenerateRandomString(16)
 
@@ -36,7 +36,7 @@ func TestDocumentSearchWithIndexEndToEnd(t *testing.T) {
 
 	// create documents
 	docCollection, err := newDocumentCollectionWithDocs(ctx, collectionName,
-		500, false, true, 1536)
+		500, false, true, 1024)
 	assert.NoError(t, err)
 
 	limit := 5

@@ -78,7 +78,7 @@ func setup() {
 
 	embeddingModel = &models.EmbeddingModel{
 		Service:    "openai",
-		Dimensions: 1536,
+		Dimensions: 1024,
 	}
 }
 

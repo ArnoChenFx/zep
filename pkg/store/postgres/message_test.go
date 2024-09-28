@@ -2,12 +2,13 @@ package postgres
 
 import (
 	"fmt"
+	"math/rand"
+	"testing"
+
 	"github.com/getzep/zep/pkg/models"
 	"github.com/getzep/zep/pkg/testutils"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
-	"math/rand"
-	"testing"
 )
 
 func TestNewMessageDAO(t *testing.T) {
@@ -564,7 +565,7 @@ func TestDelete(t *testing.T) {
 		{
 			TextUUID:  m.UUID,
 			Text:      "testText",
-			Embedding: genTestVector(t, 1536),
+			Embedding: genTestVector(t, 1024),
 		},
 	}
 	err = messageDAO.CreateEmbeddings(testCtx, embeddings)
@@ -614,12 +615,12 @@ func TestCreateEmbeddings(t *testing.T) {
 		{
 			TextUUID:  messages[0].UUID,
 			Text:      "testText1",
-			Embedding: genTestVector(t, 1536),
+			Embedding: genTestVector(t, 1024),
 		},
 		{
 			TextUUID:  messages[1].UUID,
 			Text:      "testText2",
-			Embedding: genTestVector(t, 1536),
+			Embedding: genTestVector(t, 1024),
 		},
 	}
 
@@ -656,7 +657,7 @@ func TestGetEmbedding(t *testing.T) {
 		{
 			TextUUID:  m.UUID,
 			Text:      "testText",
-			Embedding: genTestVector(t, 1536),
+			Embedding: genTestVector(t, 1024),
 		},
 	}
 	err = messageDAO.CreateEmbeddings(testCtx, embeddings)
@@ -693,12 +694,12 @@ func TestGetEmbeddingListBySession(t *testing.T) {
 		{
 			TextUUID:  messages[0].UUID,
 			Text:      "testText1",
-			Embedding: genTestVector(t, 1536),
+			Embedding: genTestVector(t, 1024),
 		},
 		{
 			TextUUID:  messages[1].UUID,
 			Text:      "testText2",
-			Embedding: genTestVector(t, 1536),
+			Embedding: genTestVector(t, 1024),
 		},
 	}
 

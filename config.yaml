@@ -29,7 +29,7 @@ extractors:
     embeddings:
       enabled: true
       chunk_size: 1000
-      dimensions: 1536
+      dimensions: 1024
       service: "openai"
   messages:
     summarizer:
@@ -38,7 +38,7 @@ extractors:
         enabled: true
       embeddings:
         enabled: true
-        dimensions: 384
+        dimensions: 1024
         service: "openai"
     entities:
       enabled: true
@@ -46,7 +46,7 @@ extractors:
       enabled: true
     embeddings:
       enabled: true
-      dimensions: 1536
+      dimensions: 1024
       service: "openai"
 store:
   type: "postgres"
