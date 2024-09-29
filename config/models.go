@@ -103,6 +103,7 @@ type SummarizerConfig struct {
 
 type CustomPromptsConfig struct {
 	SummarizerPrompts ExtractorPromptsConfig `mapstructure:"summarizer_prompts"`
+	IntentPromptTemplate string              `mapstructure:"intent_prompt_template"`
 }
 
 type ExtractorPromptsConfig struct {

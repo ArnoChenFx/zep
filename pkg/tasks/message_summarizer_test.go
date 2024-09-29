@@ -170,6 +170,7 @@ func TestGenerateProgressiveSummarizerPrompt(t *testing.T) {
 							OpenAI:    tc.customPromptOpenAI,
 							Anthropic: tc.customPromptAnthropic,
 						},
+						IntentPromptTemplate: "",
 					},
 				},
 			}

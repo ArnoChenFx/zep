@@ -5,6 +5,8 @@ Identify the intent of the subject's statement or question below.
 
 If you can't derive an Intent then simply respond back with Intent: None.
 
+REMEMBER: answer in the same language as the subject's statement or question below.
+
 EXAMPLE
 Human: Does Nike make running shoes?
 Assistant: The subject is inquiring about whether Nike, a specific brand, manufactures running shoes.
@@ -21,6 +23,8 @@ Review the Current Summary inside <current_summary></current_summary> XML tags,
 and the New Lines of the provided conversation inside the <new_lines></new_lines> XML tags. Create a concise summary 
 of the conversation, adding from the <new_lines> to the <current_summary>.
 If the New Lines are meaningless or empty, return the <current_summary>.
+
+REMEMBER: answer in the same language as the conversation below.
 
 Here is an example:
 <example>
@@ -51,6 +55,8 @@ const defaultSummaryPromptTemplateOpenAI = `
 Review the Current Content, if there is one, and the New Lines of the provided conversation. Create a concise summary 
 of the conversation, adding from the New Lines to the Current summary.
 If the New Lines are meaningless, return the Current Content.
+
+REMEMBER: answer in the same language as the conversation below.
 
 EXAMPLE
 Current summary:

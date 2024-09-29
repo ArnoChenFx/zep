@@ -112,8 +112,15 @@ func (mt *MessageIntentTask) processMessage(
 		Input: message.Content,
 	}
 
+	var finalIntentPromptTemplate string
+	if appState.Config.CustomPrompts.IntentPromptTemplate != "" {
+		finalIntentPromptTemplate = appState.Config.CustomPrompts.IntentPromptTemplate
+	} else {
+		finalIntentPromptTemplate = intentPromptTemplate
+	}
+
 	// Create a prompt with the Message input that needs to be classified
-	prompt, err := internal.ParsePrompt(intentPromptTemplate, data)
+	prompt, err := internal.ParsePrompt(finalIntentPromptTemplate, data)
 	if err != nil {
 		errs <- fmt.Errorf("MessageIntentTask: %w", err)
 		return
