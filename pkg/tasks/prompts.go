@@ -2,14 +2,14 @@ package tasks
 
 const intentPromptTemplate = `
 Identify the intent of the subject's statement or question below.
-
 If you can't derive an Intent then simply respond back with Intent: None.
-
-REMEMBER: answer in the same language as the subject's statement or question below.
 
 EXAMPLE
 Human: Does Nike make running shoes?
 Assistant: The subject is inquiring about whether Nike, a specific brand, manufactures running shoes.
+EXAMPLE END
+
+REMEMBER: answer in the same language as the subject's statement or question below.
 
 Human: {{.Input}}
 `
@@ -56,8 +56,6 @@ Review the Current Content, if there is one, and the New Lines of the provided c
 of the conversation, adding from the New Lines to the Current summary.
 If the New Lines are meaningless, return the Current Content.
 
-REMEMBER: answer in the same language as the conversation below.
-
 EXAMPLE
 Current summary:
 The human inquires about Led Zeppelin's lead singer and other band members. The AI identifies Robert Plant as the 
@@ -70,6 +68,8 @@ New summary:
 The human inquires about Led Zeppelin's lead singer and other band members. The AI identifies Robert Plant as the lead
 singer and lists the founding members as Jimmy Page, John Paul Jones, and John Bonham.
 EXAMPLE END
+
+REMEMBER: answer in the same language as the conversation below.
 
 Current summary:
 {{.PrevSummary}}
