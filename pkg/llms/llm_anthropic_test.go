@@ -52,7 +52,7 @@ func TestZepAnthropicLLM_EmbedTexts(t *testing.T) {
 	assert.NoError(t, err, "Expected no error from NewOpenAILLM")
 
 	texts := []string{"Hello, world!", "Another text"}
-	_, err = zllm.EmbedTexts(context.Background(), texts)
+	_, err = zllm.EmbedTexts(context.Background(), texts, 1024)
 	assert.ErrorContains(t, err, "not implemented", "Expected error from EmbedTexts")
 }
 
