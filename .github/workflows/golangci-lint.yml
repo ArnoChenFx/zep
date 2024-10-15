@@ -2,16 +2,16 @@ name: golangci-lint
 on:
   push:
     tags:
-      - v*
+      - graph-v*
   pull_request:
     branches:
-      - main
+      - zep-graph-memory
 permissions:
   contents: read
 jobs:
   golangci:
     name: lint
-    runs-on: depot-ubuntu-22.04-8
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-go@v5
         with:

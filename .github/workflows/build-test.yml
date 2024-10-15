@@ -3,12 +3,12 @@ name: build-test
 on:
   pull_request:
     branches:
-      - main
+      - zep-graph-memory
   push:
-     branches: [ "main" ]
+     branches: [ "zep-graph-memory" ]
 jobs:
   build:
-    runs-on: ubuntu-4c-16GB-150GB
+    runs-on: ubuntu-latest
     container: debian:bullseye-slim
     environment: build-test
     steps:
