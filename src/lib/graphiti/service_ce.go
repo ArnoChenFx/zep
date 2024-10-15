@@ -1,4 +1,3 @@
-
 package graphiti
 
 import (
@@ -61,9 +60,12 @@ type PutMemoryRequest struct {
 }
 
 type SearchRequest struct {
-	GroupIDs []string `json:"group_ids"`
-	Text     string   `json:"query"`
-	MaxFacts int      `json:"max_facts,omitempty"`
+	GroupIDs   []string `json:"group_ids"`
+	Text       string   `json:"query"`
+	MaxFacts   int      `json:"max_facts,omitempty"`
+	MinScore   float32  `json:"min_score"`
+	MmrLambda  float32  `json:"mmr_lambda"`
+	SearchType string   `json:"search_type"`
 }
 
 type SearchResponse struct {

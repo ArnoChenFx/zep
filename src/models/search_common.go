@@ -8,6 +8,10 @@ type SessionSearchQueryCommon struct {
 
 	// the session ids to search
 	SessionIDs []string `json:"session_ids,omitempty"`
+
+	MinScore   float32 `json:"min_score"`
+	MmrLambda  float32 `json:"mmr_lambda"`
+	SearchType string  `json:"search_type"`
 }
 
 type SessionSearchResultCommon struct {

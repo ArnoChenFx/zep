@@ -1,4 +1,3 @@
-
 package store
 
 import (
@@ -88,6 +87,9 @@ func (dao *memoryDAO) _searchSessions(ctx context.Context, query *models.Session
 			GroupIDs: groupIDs,
 			Text:     query.Text,
 			MaxFacts: limit,
+			MinScore: query.MinScore,
+			MmrLambda: query.MmrLambda,
+			SearchType: query.SearchType,
 		},
 	)
 	if err != nil {
