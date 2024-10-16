@@ -56,7 +56,7 @@ func searchMemory(
 	var err error
 	var queryEmbedding []float32
 	if query.Text != "" {
-		dbQuery, queryEmbedding, err = addMemoryVectorColumn(ctx, appState, dbQuery, query.Text)
+		dbQuery, queryEmbedding, err = addMemoryVectorColumn(ctx, appState, dbQuery, query.Text, query.TextEmbedding)
 		if err != nil {
 			return nil, store.NewStorageError("error adding vector column", err)
 		}
@@ -268,18 +268,22 @@ func addMemoryVectorColumn(
 	appState *models.AppState,
 	q *bun.SelectQuery,
 	queryText string,
+	queryEmbedding []float32,
 ) (*bun.SelectQuery, []float32, error) {
 	documentType := "message"
 	model, err := llms.GetEmbeddingModel(appState, documentType)
 	if err != nil {
 		return nil, nil, store.NewStorageError("failed to get message embedding model", err)
 	}
-
-	e, err := llms.EmbedTexts(ctx, appState, model, documentType, []string{queryText})
-	if err != nil {
-		return nil, nil, store.NewStorageError("failed to embed query", err)
+	
+	if queryEmbedding == nil || len(queryEmbedding) != model.Dimensions {
+		e, err := llms.EmbedTexts(ctx, appState, model, documentType, []string{queryText})
+		if err != nil {
+			return nil, nil, store.NewStorageError("failed to embed query", err)
+		}
+		queryEmbedding = e[0]
 	}
 
-	vector := pgvector.NewVector(e[0])
-	return q.ColumnExpr("(embedding <#> ?) * -1 AS dist", vector), e[0], nil
+	vector := pgvector.NewVector(queryEmbedding)
+	return q.ColumnExpr("(embedding <#> ?) * -1 AS dist", vector), queryEmbedding, nil
 }
