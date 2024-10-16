@@ -23,11 +23,12 @@ type MemorySearchResult struct {
 }
 
 type MemorySearchPayload struct {
-	Text        string                 `json:"text"`
-	Metadata    map[string]interface{} `json:"metadata,omitempty"`
-	SearchScope SearchScope            `json:"search_scope,omitempty"`
-	SearchType  SearchType             `json:"search_type,omitempty"`
-	MMRLambda   float32                `json:"mmr_lambda,omitempty"`
+	Text          string                 `json:"text"`
+	Metadata      map[string]interface{} `json:"metadata,omitempty"`
+	SearchScope   SearchScope            `json:"search_scope,omitempty"`
+	SearchType    SearchType             `json:"search_type,omitempty"`
+	MMRLambda     float32                `json:"mmr_lambda,omitempty"`
+	TextEmbedding []float32              `json:"text_embedding,omitempty"`
 }
 
 type DocumentSearchPayload struct {
