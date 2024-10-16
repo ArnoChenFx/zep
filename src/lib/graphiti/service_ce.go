@@ -63,9 +63,10 @@ type SearchRequest struct {
 	GroupIDs   []string `json:"group_ids"`
 	Text       string   `json:"query"`
 	MaxFacts   int      `json:"max_facts,omitempty"`
-	MinScore   float32  `json:"min_score"`
-	MmrLambda  float32  `json:"mmr_lambda"`
-	SearchType string   `json:"search_type"`
+	MinScore   float32  `json:"min_score,omitempty"`
+	MmrLambda  float32  `json:"mmr_lambda,omitempty"`
+	SearchType string   `json:"search_type,omitempty"`
+	TextEmbedding []float32 `json:"query_embedding,omitempty"`
 }
 
 type SearchResponse struct {

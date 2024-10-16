@@ -90,6 +90,7 @@ func (dao *memoryDAO) _searchSessions(ctx context.Context, query *models.Session
 			MinScore: query.MinScore,
 			MmrLambda: query.MmrLambda,
 			SearchType: query.SearchType,
+			TextEmbedding: query.TextEmbedding,
 		},
 	)
 	if err != nil {
