@@ -2134,6 +2134,12 @@
                 },
                 "text": {
                     "type": "string"
+                },
+                "text_embedding": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
                 }
             }
         },
